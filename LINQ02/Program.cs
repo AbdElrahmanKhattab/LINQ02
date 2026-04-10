@@ -143,12 +143,22 @@
 
             #region 13 Except (Set Difference)
 
-            int[] setA = { 1, 3, 5, 7, 9, 11, 13 };
-            int[] setB = { 3, 6, 9, 12, 15, 13 };
+            //int[] setA = { 1, 3, 5, 7, 9, 11, 13 };
+            //int[] setB = { 3, 6, 9, 12, 15, 13 };
 
-            var diff = setA.Except(setB);
+            //var diff = setA.Except(setB);
 
             #endregion
+
+            #region 14 Case-insensitive Except
+
+            string[] list1 = { "Germany", "France", "UK", "Spain" };
+            string[] list2 = { "france", "SPAIN", "Italy" };
+
+            var result = list1.Except(list2, StringComparer.OrdinalIgnoreCase);
+
+            #endregion
+
         }
     }
 
