@@ -109,18 +109,24 @@
 
             #region 9 Query Syntax Group Customers
 
-            var query =
-                from c in customers
-                group c by c.Country into g
-                select new
-                {
-                    Country = g.Key,
-                    Count = g.Count(),
-                    TotalOrderValue = g.Sum(x => x.OrderValue)
-                };
+            //var query =
+            //    from c in customers
+            //    group c by c.Country into g
+            //    select new
+            //    {
+            //        Country = g.Key,
+            //        Count = g.Count(),
+            //        TotalOrderValue = g.Sum(x => x.OrderValue)
+            //    };
 
             #endregion
 
+
+            #region 10 Total Stock
+
+            int totalStock = products.Sum(p => p.Stock);
+
+            #endregion
         }
     }
 
