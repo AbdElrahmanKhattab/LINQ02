@@ -161,9 +161,16 @@
 
             #region 15 ToDictionary
 
-            var dict = products.ToDictionary(p => p.Id);
+            //var dict = products.ToDictionary(p => p.Id);
 
-            Console.WriteLine(dict[1].Name);
+            //Console.WriteLine(dict[1].Name);
+
+            #endregion
+
+
+            #region 16 First > 50
+
+            var first50 = products.First(p => p.Price > 50);
 
             #endregion
 
