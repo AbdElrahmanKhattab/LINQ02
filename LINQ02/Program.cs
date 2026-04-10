@@ -130,8 +130,14 @@
 
             #region 11 Min / Max Price
 
-            double min = products.Min(p => p.Price);
-            double max = products.Max(p => p.Price);
+            //double min = products.Min(p => p.Price);
+            //double max = products.Max(p => p.Price);
+
+            #endregion
+
+            #region 12 Distinct Categories
+
+            var categories = products.Select(p => p.Category).Distinct();
 
             #endregion
         }
