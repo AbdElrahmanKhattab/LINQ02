@@ -185,8 +185,16 @@
 
             #region 18 Multiplication Table
 
-            var table = Enumerable.Range(1, 10)
-                                  .Select(x => 7 * x);
+            //var table = Enumerable.Range(1, 10)
+            //                      .Select(x => 7 * x);
+
+            #endregion
+
+
+            #region 19 Even Numbers
+
+            var evens = Enumerable.Range(1, 30)
+                                  .Where(x => x % 2 == 0);
 
             #endregion
         }
