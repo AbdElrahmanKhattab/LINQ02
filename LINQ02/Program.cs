@@ -30,16 +30,26 @@
 
             #region 1 Top 3 Expensive
 
-            var top3 = products.OrderByDescending(p => p.Price).Take(3);
+            //var top3 = products.OrderByDescending(p => p.Price).Take(3);
 
             #endregion
 
 
             #region 2 Page 2 (Skip + Take)
 
-            var page2 = products.Skip(5).Take(5);
+            //var page2 = products.Skip(5).Take(5);
 
             #endregion
+
+
+
+            #region 3 TakeWhile
+
+            var cheapUntil25 = products.OrderBy(p => p.Price)
+                                       .TakeWhile(p => p.Price < 25);
+
+            #endregion
+
         }
     }
 
