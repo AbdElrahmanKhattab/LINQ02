@@ -61,8 +61,19 @@
 
             #region 5 Contains
 
-            int[] ids = { 3, 9, 13, 18 };
-            bool contains9 = ids.Contains(9);
+            //int[] ids = { 3, 9, 13, 18 };
+            //bool contains9 = ids.Contains(9);
+
+            #endregion
+
+            #region 6 Group + Count
+
+            var group1 = products.GroupBy(p => p.Category);
+
+            foreach (var g in group1)
+            {
+                Console.WriteLine($"{g.Key} Count: {g.Count()}");
+            }
 
             #endregion
         }
