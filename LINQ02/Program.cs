@@ -124,7 +124,14 @@
 
             #region 10 Total Stock
 
-            int totalStock = products.Sum(p => p.Stock);
+            //int totalStock = products.Sum(p => p.Stock);
+
+            #endregion
+
+            #region 11 Min / Max Price
+
+            double min = products.Min(p => p.Price);
+            double max = products.Max(p => p.Price);
 
             #endregion
         }
