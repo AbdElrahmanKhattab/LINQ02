@@ -80,12 +80,21 @@
 
             #region 7 Group Names Only
 
-            var groupNames = products.GroupBy(p => p.Category)
-                                     .Select(g => new
-                                     {
-                                         Category = g.Key,
-                                         Names = g.Select(p => p.Name)
-                                     });
+            //var groupNames = products.GroupBy(p => p.Category)
+            //                         .Select(g => new
+            //                         {
+            //                             Category = g.Key,
+            //                             Names = g.Select(p => p.Name)
+            //                         });
+
+            #endregion
+
+
+            #region 8 Categories > 3 Products
+
+            var bigCategories = products.GroupBy(p => p.Category)
+                                        .Where(g => g.Count() > 3)
+                                        .Select(g => g.Key);
 
             #endregion
         }
