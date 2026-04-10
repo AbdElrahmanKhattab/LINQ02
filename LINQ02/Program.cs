@@ -177,7 +177,16 @@
 
             #region 17 FirstOrDefault
 
-            var first500 = products.FirstOrDefault(p => p.Price > 500);
+            //var first500 = products.FirstOrDefault(p => p.Price > 500);
+
+            #endregion
+
+
+
+            #region 18 Multiplication Table
+
+            var table = Enumerable.Range(1, 10)
+                                  .Select(x => 7 * x);
 
             #endregion
         }
