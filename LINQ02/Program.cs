@@ -53,9 +53,16 @@
 
             #region 4 All Seafood In Stock
 
-            var seafoodCheck = products
-                .Where(p => p.Category == "Seafood")
-                .All(p => p.Stock > 0);
+            //var seafoodCheck = products
+            //    .Where(p => p.Category == "Seafood")
+            //    .All(p => p.Stock > 0);
+
+            #endregion
+
+            #region 5 Contains
+
+            int[] ids = { 3, 9, 13, 18 };
+            bool contains9 = ids.Contains(9);
 
             #endregion
         }
