@@ -22,6 +22,15 @@
             };
 
 
+            List<Customer> customers = new List<Customer>
+            {
+                new Customer{ Name="Ahmed", Country="Egypt", OrderValue=500 },
+                new Customer{ Name="Sara", Country="Germany", OrderValue=300 },
+                new Customer{ Name="Ali", Country="Egypt", OrderValue=700 },
+                new Customer{ Name="Mona", Country="France", OrderValue=200 }
+            };
+
+
 
             #endregion
 
@@ -92,11 +101,26 @@
 
             #region 8 Categories > 3 Products
 
-            var bigCategories = products.GroupBy(p => p.Category)
-                                        .Where(g => g.Count() > 3)
-                                        .Select(g => g.Key);
+            //var bigCategories = products.GroupBy(p => p.Category)
+            //                            .Where(g => g.Count() > 3)
+            //                            .Select(g => g.Key);
 
             #endregion
+
+            #region 9 Query Syntax Group Customers
+
+            var query =
+                from c in customers
+                group c by c.Country into g
+                select new
+                {
+                    Country = g.Key,
+                    Count = g.Count(),
+                    TotalOrderValue = g.Sum(x => x.OrderValue)
+                };
+
+            #endregion
+
         }
     }
 
@@ -107,5 +131,12 @@
         public string Category;
         public double Price;
         public int Stock;
+    }
+
+    class Customer
+    {
+        public string Name;
+        public string Country;
+        public double OrderValue;
     }
 }
