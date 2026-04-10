@@ -45,11 +45,19 @@
 
             #region 3 TakeWhile
 
-            var cheapUntil25 = products.OrderBy(p => p.Price)
-                                       .TakeWhile(p => p.Price < 25);
+            //var cheapUntil25 = products.OrderBy(p => p.Price)
+            //                           .TakeWhile(p => p.Price < 25);
 
             #endregion
 
+
+            #region 4 All Seafood In Stock
+
+            var seafoodCheck = products
+                .Where(p => p.Category == "Seafood")
+                .All(p => p.Stock > 0);
+
+            #endregion
         }
     }
 
