@@ -68,12 +68,24 @@
 
             #region 6 Group + Count
 
-            var group1 = products.GroupBy(p => p.Category);
+            //var group1 = products.GroupBy(p => p.Category);
 
-            foreach (var g in group1)
-            {
-                Console.WriteLine($"{g.Key} Count: {g.Count()}");
-            }
+            //foreach (var g in group1)
+            //{
+            //    Console.WriteLine($"{g.Key} Count: {g.Count()}");
+            //}
+
+            #endregion
+
+
+            #region 7 Group Names Only
+
+            var groupNames = products.GroupBy(p => p.Category)
+                                     .Select(g => new
+                                     {
+                                         Category = g.Key,
+                                         Names = g.Select(p => p.Name)
+                                     });
 
             #endregion
         }
