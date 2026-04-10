@@ -152,10 +152,18 @@
 
             #region 14 Case-insensitive Except
 
-            string[] list1 = { "Germany", "France", "UK", "Spain" };
-            string[] list2 = { "france", "SPAIN", "Italy" };
+            //string[] list1 = { "Germany", "France", "UK", "Spain" };
+            //string[] list2 = { "france", "SPAIN", "Italy" };
 
-            var result = list1.Except(list2, StringComparer.OrdinalIgnoreCase);
+            //var result = list1.Except(list2, StringComparer.OrdinalIgnoreCase);
+
+            #endregion
+
+            #region 15 ToDictionary
+
+            var dict = products.ToDictionary(p => p.Id);
+
+            Console.WriteLine(dict[1].Name);
 
             #endregion
 
