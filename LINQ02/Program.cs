@@ -193,8 +193,17 @@
 
             #region 19 Even Numbers
 
-            var evens = Enumerable.Range(1, 30)
-                                  .Where(x => x % 2 == 0);
+            //var evens = Enumerable.Range(1, 30)
+            //                      .Where(x => x % 2 == 0);
+
+            #endregion
+
+
+
+            #region 20 Concat
+
+            var combined = products.Take(3).Select(p => p.Name)
+                .Concat(customers.Take(3).Select(c => c.Name));
 
             #endregion
         }
