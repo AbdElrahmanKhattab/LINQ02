@@ -170,10 +170,16 @@
 
             #region 16 First > 50
 
-            var first50 = products.First(p => p.Price > 50);
+            //var first50 = products.First(p => p.Price > 50);
 
             #endregion
 
+
+            #region 17 FirstOrDefault
+
+            var first500 = products.FirstOrDefault(p => p.Price > 500);
+
+            #endregion
         }
     }
 
