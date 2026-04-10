@@ -202,8 +202,19 @@
 
             #region 20 Concat
 
-            var combined = products.Take(3).Select(p => p.Name)
-                .Concat(customers.Take(3).Select(c => c.Name));
+            //var combined = products.Take(3).Select(p => p.Name)
+            //    .Concat(customers.Take(3).Select(c => c.Name));
+
+            #endregion
+
+
+            #region 21 Zip
+
+            var zipped = products.Zip(customers,
+                (p, c) => $"{p.Name} sold to {c.Name}");
+
+            foreach (var z in zipped)
+                Console.WriteLine(z);
 
             #endregion
         }
