@@ -35,7 +35,11 @@
             #endregion
 
 
+            #region 2 Page 2 (Skip + Take)
 
+            var page2 = products.Skip(5).Take(5);
+
+            #endregion
         }
     }
 
